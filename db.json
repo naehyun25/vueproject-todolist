@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "subject": "냥빨",
+      "completed": false,
+      "id": 1
+    },
+    {
+      "subject": "발톱깍기",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "subject": "귀청소",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "subject": "캔따기",
+      "completed": false,
+      "id": 4
+    }
+  ]
+}
