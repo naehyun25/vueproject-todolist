@@ -27,8 +27,9 @@ export default {
     const todos = ref([]);
     const filteredTodos = computed(() => {
       //입력만되면 ture
-      if (searchText.value === "") {
+      if (searchText.value) {
         return todos.value.filter((todo) => {
+          console.log(todo)
           console.log(todos.value, todo);
           return todo.subject.includes(searchText.value);
         });
@@ -36,52 +37,46 @@ export default {
       return todos.value;
     });
     const getTodos = () => {
-      axios.get("http://localhost:3000/todos")
+      axios.get("http://localhost:8080/todos")
         .then((res) => {
-          console.log("이것은 todos.value입니다", res);
-          todos.value = res.data
+          todos.value = res.data.todos;
         })
         .catch((err) => { console.log(err); error.value = "getTodos 일시적으로 오류발생." })
     }
     getTodos();
     const onSubmit = (todo) => {
       error.value = "";
-      axios.post("http://localhost:3000/todos", {
+      axios.post("http://localhost:8080/todos", {
         subject: todo.subject,
         completed: todo.completed,
       }).then((res) => {
         //두개 사용시 배열로
+        console.log(res.data,res.data.todos)
         return [
-          console.log(res),
-          todos.value.push(res.data)
+          todos.value.push(res.data),//배열로 밀어넣고
+          getTodos() //조회함수다시 호출하면 새로고침안해도됨
         ]
       }).catch((err) => {
         "😋", console.log(err);
         error.value = "일시적으로 에러가 발생 잠시후 다시해주세요"
       })
     };
-    /*     const todoStyle = {
-          textDecoration: "line-through",
-          color: "gray",
-        }; */
     const deleteTodo = (index) => {
       error.value = "";
-      // console.log(index);
-      const id = todos.value[index].id;
-      axios.delete("http://localhost:3000/todos/" + id)
+      const id = index;
+      axios.delete("http://localhost:8080/todos/" + id)
         .then(() => {
-          todos.value.splice(index, 1);
+          getTodos();
         })
         .catch((err) => { console.log(err); })
     };
     /* fetch : 부분적 수정 ,put : 전체수정 */
     const toggleTodo = (index) => {
-      const id = todos.value[index].id;
-      axios.patch("http://localhost:3000/todos/" + id, {
-        completed: !todos.value[index].completed
-      })
-        .then(() => { todos.value[index].completed = !todos.value[index].completed })
+      const id=index
+      axios.post("http://localhost:8080/todos/" + id)
+        .then((res) => { console.log("toggleTodo-res",res); })
         .catch((err) => console.log(err));
+        getTodos();
       // console.log(index);
       // todos.value[index].completed = !todos.value[index].completed;
     };
