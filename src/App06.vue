@@ -7,15 +7,7 @@
     <div v-if="!todos.length">등록된 일정이 없습니다</div>
     <div v-if="!filteredTodos.length">검색결과가 없습니다</div>
     <TodoList :todos="filteredTodos" @toggle-todo="toggleTodo" @delete-todo="deleteTodo" />
-    <nav>
-       <!-- aria-label="Page navigation example" 접근성 필요없음 -->
-      <ul class="pagination justify-content-center">
-        <li v-if="currentPage !== 1" class="page-item"><a class="page-link" @click="getTodos(currentPage-1)">Previous</a></li>
-        <li  v-for="btn in numberOfPages" class="page-item" :key="btn" :class="currentPage === btn ? 'active':''">
-          <a class="page-link" @click="getTodos(btn)">{{btn}}</a></li>
-        <li v-if="currentPage !== numberOfPages" class="page-item"><a class="page-link" @click="getTodos(currentPage+1)">Next</a></li>
-      </ul>
-    </nav>
+    {{numberOfPages}}
   </div>
 </template>
 
@@ -52,15 +44,10 @@ export default {
       }
       return todos.value;
     });
-    const getTodos = (btn=currentPage.value) => {
-      currentPage.value=btn
-      console.log(currentPage.value)
-      axios.get(`http://localhost:8080/todos?_page=${btn}&_limit=${limit}`)
+    const getTodos = () => {
+      axios.get("http://localhost:8080/todos")
         .then((res) => {
-          console.log('성공',res.headers["x-total-count"])
-          //속성명에 특수문자가 있을 경우 대괄호로 표기한다.
-          todos.value = res.data;
-          totalTodos.value = res.headers["x-total-count"];
+          todos.value = res.data.todos;
         })
         .catch((err) => { console.log(err); error.value = "getTodos 일시적으로 오류발생." })
     }
@@ -112,8 +99,7 @@ export default {
       deleteTodo,
       toggleTodo,
       error,
-      numberOfPages,
-      currentPage
+      numberOfPages
     };
   },
 };
@@ -124,5 +110,4 @@ export default {
   color: gray;
   text-decoration: line-through;
 }
-.page-item a{cursor:pointer}
 </style>
