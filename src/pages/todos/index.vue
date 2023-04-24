@@ -1,18 +1,21 @@
 <template>
-<router-view />
-  <div class="container">
+  <div>
     <h1>오늘의 할일</h1>
     <input v-model="searchText" type="text" class="form-control" placeholder="검색어를 입력하세요" @keyup.enter="searchTodos" />
     <TodoBasicForm @add-todo="onSubmit" />
-    <div style="color:red">{{ error }}</div>
+    <div style="color: red">{{ error }}</div>
     <div v-if="!todos.length">등록된 일정이 없습니다</div>
     <TodoList :todos="todos" @toggle-todo="toggleTodo" @delete-todo="deleteTodo" />
     <nav>
       <ul class="pagination justify-content-center">
-        <li v-if="currentPage !== 1" class="page-item"><a class="page-link" @click="getTodos(currentPage-1)">Previous</a></li>
-        <li  v-for="btn in numberOfPages" class="page-item" :key="btn" :class="currentPage === btn ? 'active':''">
-          <a class="page-link" @click="getTodos(btn)">{{btn}}</a></li>
-        <li v-if="currentPage !== numberOfPages" class="page-item"><a class="page-link" @click="getTodos(currentPage+1)">Next</a></li>
+        <li v-if="currentPage !== 1" class="page-item"><a class="page-link"
+            @click="getTodos(currentPage - 1)">Previous</a>
+        </li>
+        <li v-for="btn in numberOfPages" class="page-item" :key="btn" :class="currentPage === btn ? 'active' : ''">
+          <a class="page-link" @click="getTodos(btn)">{{ btn }}</a>
+        </li>
+        <li v-if="currentPage !== numberOfPages" class="page-item"><a class="page-link"
+            @click="getTodos(currentPage + 1)">Next</a></li>
       </ul>
     </nav>
   </div>

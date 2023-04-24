@@ -76,18 +76,16 @@
       "id": 15
     },
     {
-      "subject": "아아아아",
+      "subject": "아아아아ddd",
       "completed": false,
       "id": 16
     },
     {
       "subject": "타입스크립트",
-      "completed": false,
       "id": 17
     },
     {
-      "subject": "청소기",
-      "completed": false,
+      "subject": "청소기ddd",
       "id": 18
     }
   ]
