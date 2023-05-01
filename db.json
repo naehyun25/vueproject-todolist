@@ -6,87 +6,76 @@
       "id": 1
     },
     {
-      "subject": "뷰복습하기",
-      "completed": false,
-      "id": 2
+      "subject": "뷰복습하기ㅁ굦54ㅛㅈ4뵤14 5ㅛ",
+      "complete": false,
+      "id": 2,
+      "completed": false
     },
     {
-      "subject": "리액트프로젝트 유지보수",
-      "completed": false,
-      "id": 3
+      "subject": "타입스크립트공부",
+      "complete": true,
+      "id": 3,
+      "completed": true
     },
     {
-      "subject": "이력서 페이지 만들기",
-      "completed": false,
-      "id": 4
+      "subject": "타입스크립트 공부",
+      "complete": false,
+      "id": 4,
+      "completed": true
     },
     {
-      "subject": "입사지원하기",
-      "completed": false,
+      "subject": "수정한거",
+      "completed": true,
+      "body": "수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니수정되니",
       "id": 5
     },
     {
-      "subject": "망고패드갈기",
-      "completed": true,
+      "subject": "일정추가",
+      "completed": false,
+      "body": "일정추가",
       "id": 6
     },
     {
-      "subject": "망고랑 얘기하기",
-      "completed": false,
+      "subject": "일정등록하기",
+      "completed": true,
+      "body": "일정등록하기",
       "id": 7
     },
     {
-      "subject": "빨래널기",
-      "completed": false,
+      "subject": " 일정등록하기",
+      "completed": true,
+      "body": "수정되냐\n일정등록하기",
       "id": 8
     },
     {
-      "subject": "자바스크립트 복습하기",
-      "completed": false,
+      "subject": "ㅈㅈ",
+      "completed": true,
+      "body": "ㅇㅇㅇ",
       "id": 9
     },
     {
-      "subject": "리덕스 공부하기",
+      "subject": "힘들었따 내껀데 수정ㄱㄱ",
       "completed": false,
+      "body": "힘들었따ㄷㅈㅈㅈㅈㅈ",
       "id": 10
     },
     {
-      "subject": "dd",
+      "subject": "타입스크립트",
       "completed": false,
+      "body": "타입스크립트",
       "id": 11
     },
     {
-      "subject": "안녕하세요",
+      "subject": "setw",
       "completed": false,
+      "body": "eayr5uwet",
       "id": 12
     },
     {
-      "subject": "아아",
+      "subject": "얌다ㅣㅓ리마얼",
       "completed": false,
+      "body": "미ㅏㄴㄷ얼매쟈더래ㅑㅁ더라얼",
       "id": 13
-    },
-    {
-      "subject": "아아아아아",
-      "completed": false,
-      "id": 14
-    },
-    {
-      "subject": "오오오오오오오",
-      "completed": false,
-      "id": 15
-    },
-    {
-      "subject": "아아아아ddd",
-      "completed": false,
-      "id": 16
-    },
-    {
-      "subject": "타입스크립트",
-      "id": 17
-    },
-    {
-      "subject": "청소기ddd",
-      "id": 18
     }
   ]
 }

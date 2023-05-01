@@ -23,7 +23,6 @@ export default {
       if (todo.value === "") {
         errMsg.value = true;
       } else {
-        //emit('이벤트명',{전달할데이터})
         emit("add-todo", {
           id: Date.now(),
           subject: todo.value,
