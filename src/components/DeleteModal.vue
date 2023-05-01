@@ -1,6 +1,12 @@
 <template>
 	<Modal>
-		<template v-slot:title><h2>일정삭제👹</h2></template>
+		<template v-slot:title>
+			<h2>일정삭제👹</h2>
+			<button
+				type="button"
+				class="btn-close"
+				@click="onClose"></button>
+		</template>
 		<template #body> 일정이 삭제됩니다.</template>
 		<template #footer>
 			<button
